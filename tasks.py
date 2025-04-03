@@ -49,3 +49,13 @@ def get_nth(node, index):
             raise ValueError("Index out of range.")
         node = node.next  
     return node
+
+class Context(object):
+    def __init__(self, source, dest):
+        self.source = source
+        self.dest = dest
+    
+def move_node(source, dest):
+    dest = push(dest, source.data)
+    source = source.next
+    return Context(source, dest)
