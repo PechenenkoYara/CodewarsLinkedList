@@ -72,3 +72,12 @@ def sorted_insert(head, data):
     new_node.next = current.next
     current.next = new_node
     return head
+
+def reverse(head):
+    if head is None:
+        return head
+    new_list = Node(head.data)
+    while head.next is not None:
+        head = head.next
+        new_list = push(new_list, head.data)
+    return new_list
