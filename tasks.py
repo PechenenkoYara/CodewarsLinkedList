@@ -38,3 +38,14 @@ def build_one_two_three():
     head = push(head, 2)
     head = push(head, 1)
     return head
+
+def get_nth(node, index):
+    if node is None:
+        raise ValueError("List is empty.")
+    if index < 0:
+        raise ValueError("Index must be non-negative.")
+    for i in range(index): 
+        if node.next is None:  
+            raise ValueError("Index out of range.")
+        node = node.next  
+    return node
